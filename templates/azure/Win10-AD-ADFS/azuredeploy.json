@@ -888,6 +888,9 @@
                     "domainFQDN": {
                         "value": "[parameters('domainFQDN')]"
                     },
+                    "domainNetbiosName": {
+                        "value": "[parameters('domainNetbiosName')]"
+                    },
                     "adminUsername": {
                         "value": "[parameters('adminUsername')]"
                     },
@@ -1120,6 +1123,9 @@
                     },
                     "domainFQDN": {
                         "value": "[parameters('domainFQDN')]"
+                    },
+                    "domainNetbiosName": {
+                        "value": "[parameters('domainNetbiosName')]"
                     },
                     "adminUsername": {
                         "value": "[parameters('adminUsername')]"
