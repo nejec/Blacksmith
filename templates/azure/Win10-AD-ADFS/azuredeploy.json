@@ -51,6 +51,13 @@
             },
             "defaultValue": "blacksmith.local"
         },
+        "domainNetbiosName": {
+            "type": "string",
+            "metadata": {
+                "description": "NetBIOS name for the new AD domain"
+            },
+            "defaultValue": ""
+        },
         "numberOfWorkstations": {
             "type": "int",
             "minValue": 1,
@@ -378,7 +385,7 @@
     },
     "variables": {
         "storageAccountName": "[concat(uniquestring(resourceGroup().id, deployment().name, parameters('utcValue')))]",
-        
+
         // Virtual Network Setup
         "virtualNetworkName": "[parameters('virtualNetworkName')]",
         "virtualNetworkAddressRange": "[parameters('virtualNetworkAddressRange')]",
@@ -422,7 +429,7 @@
         "importPfxCertTemplateUri": "[uri(parameters('_artifactsLocation'), concat('templates/azure/Win10-AD-ADFS/nestedtemplates/importPfxCert.json', parameters('_artifactsLocationSasToken')))]",
         "installAADConnectTemplateUri": "[uri(parameters('_artifactsLocation'), concat('templates/azure/Win10-AD/nestedtemplates/installAADConnect.json', parameters('_artifactsLocationSasToken')))]",
         "enableTLSTemplateUri": "[uri(parameters('_artifactsLocation'), concat('templates/azure/Win10-AD/nestedtemplates/enableTLS12.json', parameters('_artifactsLocationSasToken')))]",
-        
+
         // Custom Scripts
         "initialSettingsScript": "[uri(parameters('_artifactsLocation'), concat('templates/azure/Win10-AD-ADFS/scripts/Set-Initial-Settings.ps1', parameters('_artifactsLocationSasToken')))]",
         "prepareBoxScript": "[uri(parameters('_artifactsLocation'), concat('resources/scripts/powershell/misc/Prepare-Box.ps1', parameters('_artifactsLocationSasToken')))]",
@@ -434,7 +441,7 @@
         "saclModule": "https://raw.githubusercontent.com/OTRF/Set-AuditRule/master/Set-AuditRule.ps1",
         "setSACLScript": "[uri(parameters('_artifactsLocation'), concat('resources/scripts/powershell/auditing/Set-SACLs.ps1', parameters('_artifactsLocationSasToken')))]",
         "setWallPaperScript": "[uri(parameters('_artifactsLocation'), concat('resources/scripts/powershell/misc/Set-WallPaper.ps1', parameters('_artifactsLocationSasToken')))]",
-        
+
         // Powershell DSC Scripts
         "dscModules": "[uri(parameters('_artifactsLocation'), concat('templates/azure/Win10-AD-ADFS/scripts/Install-DSC-Modules.ps1', parameters('_artifactsLocationSasToken')))]",
         "createADForestScript": "[uri(parameters('_artifactsLocation'), concat('resources/scripts/powershell/dsc/active-directory/Create-AD.zip', parameters('_artifactsLocationSasToken')))]",
@@ -483,7 +490,7 @@
         "domainNameArray": "[split(parameters('domainFQDN'),'.')]",
         "workstationsOUPath": "[concat('OU=Workstations; DC=', variables('domainNameArray')[0], '; DC=', variables('domainNameArray')[1])]",
         "serversOUPath": "[concat('OU=Servers; DC=', variables('domainNameArray')[0], '; DC=', variables('domainNameArray')[1])]",
-        
+
         //Certificates
         "smbSharedFolder": "Setup",
         "selfsignedPfxCertPath": "[concat('\\\\',variables('domainController')[0].vmName,'\\',variables('smbSharedFolder'),'\\',parameters('pfxCertName'))]",
