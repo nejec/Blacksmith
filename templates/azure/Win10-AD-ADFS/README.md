@@ -1,6 +1,6 @@
 # Windows 10 + Windows Server (Active Directory) + Windows Server (Active Directory Federation Services)
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FOTRF%2FBlacksmith%2Fmaster%2Ftemplates%2Fazure%2FWin10-AD-ADFS%2Fazuredeploy.json) [![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.png)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FOTRF%2FBlacksmith%2Fmaster%2Ftemplates%2Fazure%2FWin10-AD-ADFS%2Fazuredeploy.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fnejec%2FBlacksmith%2Fmaster%2Ftemplates%2Fazure%2FWin10-AD-ADFS%2Fazuredeploy.json) [![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.png)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fnejec%2FBlacksmith%2Fmaster%2Ftemplates%2Fazure%2FWin10-AD-ADFS%2Fazuredeploy.json)
 
 ## Resources
 
@@ -30,4 +30,4 @@
 * [OPTIONAL] Windows [Microsoft Monitoring Agent](https://docs.microsoft.com/en-us/services-hub/health/mma-setup) installed
     * It connects to the Log Analytics workspace defined in the template.
 * [OPTIONAL] Sysmon
-    * [Sysmon Config](https://github.com/OTRF/Blacksmith/blob/master/resources/configs/sysmon/sysmon.xml)
+    * [Sysmon Config](https://github.com/nejec/Blacksmith/blob/master/resources/configs/sysmon/sysmon.xml)
